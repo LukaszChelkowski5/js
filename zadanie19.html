@@ -1,0 +1,50 @@
+<html> 
+<head> 
+<title>
+    Obliczenie pola oraz obwodu prostokąta.
+</title>
+ <script language="JavaScript">
+function obw(a,b)
+{
+ a_chel=parseFloat(a)
+ b_chel=parseFloat(b)
+ obw_wynik=Math((2*a_chel)+(2*b_chel))
+ document.getElementsByName('obw')[0].value=obw_wynik.toFixed(2); /* na dokument */
+ alert("Obw="+obw_wynik.toFixed(2)+" cm"); /*do okna Alert */
+ pokaz1.innerHTML="Obw="+obw_wynik.toFixed(2)+" cm"+"<br>";  /* do tabeli */
+}
+function Pc(a1,b1)
+{
+ a1_chel=parseFloat(a1)
+ b1_chel=parseFloat(b1)
+ Pole_chel=Math(a1_chel*b1_chel)
+ document.getElementsByName('pole')[0].value=Pc_wynik.toFixed(2);
+ alert("Pc="+Pole_chel.toFixed(2)+" cm^2");
+ pokaz2.innerHTML="Pc="+Pole_chel.toFixed(2)+"cm^2";
+}
+ </script>
+</head> 
+<body> 
+<br> <br>
+<form name="formularz" action="..." onsubmit="obw(this.boka.value,this.bokb.value); 
+Pc(this.boka.value,this.bokb.value);return false"> 
+Podaj a=
+<input size="6" name="boka">
+Podaj b=
+<input size="6" name="bokb">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Obw=
+<input size="6" name="obw">
+Pc=
+<input size="6" name="pole">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body>
+</html>
