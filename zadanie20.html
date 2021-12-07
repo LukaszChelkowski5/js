@@ -1,0 +1,59 @@
+<html> 
+<head> 
+<title>
+ Przykład obliczenia obwodu i pola trapezu równoramiennego
+</title>
+ <script language="JavaScript">
+function Pow_chelkowski(a,b,h,r,pole)
+{
+ r_che=parseFloat(r)
+ a_che=parseFloat(a)
+ b_che=parseFloat(b)
+ h_che=parseFloat(h)
+ r=(b_che-a_che)/(2*(b_che-a_che))/(2+h_che*h_che)
+ pole=(a_che+b_che)*h_che/2
+ document.getElementsByName('pole')[0].value=pole.toFixed(2); /* na dokument */
+ alert("Pole="+pole.toFixed(2)+" cm^2"); /*do okna Alert */
+ pokaz1.innerHTML="Pole="+pole.toFixed(2)+" cm^2"+"<br>";  /* do tabeli */
+}
+function Obw_chelkowski(a,b,h,r,obw)
+{
+ r_che=parseFloat(r)
+ a_che=parseFloat(a)
+ b_che=parseFloat(b)
+ h_che=parseFloat(h)
+ r_che=(b_che-a_che)/(2*(b_che-a_che))/(2+h_che*h_che)
+ obw=r_che+r_che+a_che+b_che
+ document.getElementsByName('obw')[0].value=obw.toFixed(2);
+ alert("Obwód="+obw.toFixed(2)+" cm");
+ pokaz2.innerHTML="Obwód="+obw.toFixed(2)+"cm"+"<br>";
+}
+ </script>
+</head> 
+<body> 
+Obliczanie obwodu i pola trapezu równoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pow_chelkowski(this.bok_a.value,this.bok_b.value,this.wysokosc.value); 
+Obw_chelkowski(this.bok_a.value,this.bok_b.value,this.wysokosc.value);return false"> 
+1 Podstawa(a)=
+<input size="6" name="bok_a">
+2 Podstawa(b)=
+<input size="6" name="bok_b">
+Wysokość(h)=
+<input size="6" name="wysokosc">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole Trapezu=
+<input size="6" name="pole">
+Obwod Trapezu=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
